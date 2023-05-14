@@ -90,6 +90,7 @@ final class ErrorHandler
                 break;
 
             case E_DEPRECATED:
+dump([__METHOD__, 'E_DEPRECATED', $errorString]);
                 Event\Facade::emitter()->testTriggeredPhpDeprecation(
                     $this->testValueObjectForEvents(),
                     $errorString,
@@ -101,6 +102,7 @@ final class ErrorHandler
                 break;
 
             case E_USER_DEPRECATED:
+dump([__METHOD__, 'E_USER_DEPRECATED', $errorString]);
                 Event\Facade::emitter()->testTriggeredDeprecation(
                     $this->testValueObjectForEvents(),
                     $errorString,
