@@ -41,6 +41,7 @@ final class ErrorHandler
      */
     public function __invoke(int $errorNumber, string $errorString, string $errorFile, int $errorLine): bool
     {
+dump([__METHOD__, $errorNumber, $errorString]);
         $suppressed = !($errorNumber & error_reporting());
 
         switch ($errorNumber) {
