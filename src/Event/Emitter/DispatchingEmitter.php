@@ -699,7 +699,6 @@ final class DispatchingEmitter implements Emitter
      */
     public function testTriggeredPhpDeprecation(Code\Test $test, string $message, string $file, int $line, bool $suppressed): void
     {
-dump([__METHOD__, $message, $test]);
         $this->dispatcher->dispatch(
             new Test\PhpDeprecationTriggered(
                 $this->telemetryInfo(),
@@ -718,7 +717,6 @@ dump([__METHOD__, $message, $test]);
      */
     public function testTriggeredDeprecation(Code\Test $test, string $message, string $file, int $line, bool $suppressed): void
     {
-dump([__METHOD__, $message, $test]);
         $this->dispatcher->dispatch(
             new Test\DeprecationTriggered(
                 $this->telemetryInfo(),
