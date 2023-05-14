@@ -19,6 +19,7 @@ final class TestRunnerTriggeredDeprecationSubscriber extends Subscriber implemen
 {
     public function notify(DeprecationTriggered $event): void
     {
+dump([__METHOD__, $event]);
         $this->collector()->testRunnerTriggeredDeprecation($event);
     }
 }

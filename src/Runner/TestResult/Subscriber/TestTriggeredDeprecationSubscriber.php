@@ -19,6 +19,7 @@ final class TestTriggeredDeprecationSubscriber extends Subscriber implements Dep
 {
     public function notify(DeprecationTriggered $event): void
     {
+dump([__METHOD__, $event]);
         $this->collector()->testTriggeredDeprecation($event);
     }
 }

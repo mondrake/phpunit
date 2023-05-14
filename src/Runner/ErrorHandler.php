@@ -92,7 +92,6 @@ dump([__METHOD__, $errorNumber, $errorString, error_reporting()]);
                 break;
 
             case E_DEPRECATED:
-dump([__METHOD__, 'E_DEPRECATED', $errorString]);
                 Event\Facade::emitter()->testTriggeredPhpDeprecation(
                     $this->testValueObjectForEvents(),
                     $errorString,
@@ -104,7 +103,6 @@ dump([__METHOD__, 'E_DEPRECATED', $errorString]);
                 break;
 
             case E_USER_DEPRECATED:
-dump([__METHOD__, 'E_USER_DEPRECATED', $errorString]);
                 Event\Facade::emitter()->testTriggeredDeprecation(
                     $this->testValueObjectForEvents(),
                     $errorString,
