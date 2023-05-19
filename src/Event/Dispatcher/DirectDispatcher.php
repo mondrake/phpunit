@@ -124,8 +124,8 @@ final class DirectDispatcher implements SubscribableDispatcher
      */
     private function ignoreThrowablesFromThirdPartySubscribers(Throwable $t): void
     {
-        if (str_starts_with($t->getFile(), dirname(__DIR__, 2))) {
+//        if (str_starts_with($t->getFile(), dirname(__DIR__, 2))) {
             throw $t;
-        }
+//        }
     }
 }
