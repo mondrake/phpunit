@@ -12,7 +12,6 @@ namespace PHPUnit\Event;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Small;
 use PHPUnit\Framework\TestCase;
-use PHPUnit\Runner\DeprecationCollector\TestTriggeredDeprecationSubscriber;
 
 #[CoversClass(CollectingDispatcher::class)]
 #[Small]
@@ -20,7 +19,7 @@ final class CollectingDispatcherTest extends TestCase
 {
     public function testHasNoCollectedEventsWhenFlushedImmediatelyAfterCreation(): void
     {
-        $typeMap = new TypeMap();
+        $typeMap = new TypeMap;
         $typeMap->addMapping(Test\DeprecationTriggeredSubscriber::class, Test\DeprecationTriggered::class);
 
         $dispatcher = new CollectingDispatcher(new DirectDispatcher($typeMap));
@@ -30,7 +29,7 @@ final class CollectingDispatcherTest extends TestCase
 
     public function testCollectsDispatchedEventsUntilFlushed(): void
     {
-        $typeMap = new TypeMap();
+        $typeMap = new TypeMap;
         $typeMap->addMapping(Test\DeprecationTriggeredSubscriber::class, Test\DeprecationTriggered::class);
 
         $dispatcher = new CollectingDispatcher(new DirectDispatcher($typeMap));
