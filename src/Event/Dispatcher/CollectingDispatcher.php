@@ -33,7 +33,12 @@ final class CollectingDispatcher implements Dispatcher
     public function dispatch(Event $event): void
     {
         $this->events->add($event);
-        $this->isolatedDirectDispatcher->dispatch($event);
+        try {
+            $this->isolatedDirectDispatcher->dispatch($event);
+        }
+        catch (UnknownEventTypeException) {
+            // Do nothing.
+        }
     }
 
     public function flush(): EventCollection

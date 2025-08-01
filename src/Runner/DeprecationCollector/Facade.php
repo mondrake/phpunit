@@ -22,7 +22,7 @@ use PHPUnit\TextUI\Configuration\Registry as ConfigurationRegistry;
  */
 final class Facade
 {
-    private static Collector|InIsolationCollector|null $collector = null;
+    private static null|Collector|InIsolationCollector $collector = null;
     private static bool $inIsolation                              = false;
 
     /**

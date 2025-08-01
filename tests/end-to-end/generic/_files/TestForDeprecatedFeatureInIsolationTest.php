@@ -81,5 +81,4 @@ final class TestForDeprecatedFeatureInIsolationTest extends TestCase
 
         @trigger_error('something else', E_USER_DEPRECATED);
     }
-
 }
